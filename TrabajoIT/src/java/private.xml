@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="private" namespace="/" extends="struts-default, json-default">
+        <action name="dashboard" class="com.estudyplus.controlador.action.DashboardAction">
+            <result name="success">jsp/dashboard.jsp</result>
+            <result name="error" type="redirectAction">login</result>
+        </action>
+        
+        <action name="showQuickSessionForm" class="com.estudyplus.controlador.action.DashboardAction" method="showQuickSessionForm">
+            <result name="success" type="json">
+                <param name="root">this</param> 
+                <param name="includeProperties">
+                    sesion\\[titulo|descripcion|duracionPlanificadaMinutos\\],
+                    tecnicasDisponibles\\[\\d+\\]\\[id|nombre|duracionFocoMinutos|duracionDescansoMinutos\\],
+                    entregasDisponibles\\[\\d+\\]\\[id|titulo\\],
+                    examenesDisponibles\\[\\d+\\]\\[id|nombre\\],
+                    currentDateTimeFormatted
+                </param>
+                <param name="enableGZIP">true</param>
+                <param name="excludeNullProperties">true</param>
+            </result>
+            <result name="login" type="redirectAction">login</result>
+            <result name="error" type="json">
+                <param name="root">actionErrors</param>
+                <param name="statusCode">500</param>
+            </result>
+        </action>
+
+        <action name="startQuickSession" class="com.estudyplus.controlador.action.DashboardAction" method="startQuickSession">
+            <result name="startActiveSession" type="redirectAction">
+                <param name="actionName">startStudySession</param>
+                <param name="sesionId">${sesionId}</param>
+            </result>
+            <result name="input">/jsp/dashboard.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/error.jsp</result>
+        </action>
+
+        <action name="viewGamification" class="com.estudyplus.controlador.action.rankingAction">
+            <result name="success">/jsp/ranking.jsp</result>
+            <result name="error">/jsp/ranking.jsp</result>
+        </action>
+        
+        <action name="showCreateGroupForm" class="com.estudyplus.controlador.action.GroupAction" method="showCreateGroupForm">
+            <result name="success">/jsp/createGroup.jsp</result>
+        </action>
+
+        <action name="createGroup" class="com.estudyplus.controlador.action.GroupAction" method="createGroup">
+            <result name="success" type="redirectAction">dashboard</result>
+            <result name="input">/jsp/createGroup.jsp</result> 
+            <result name="login" type="redirectAction">login</result> 
+        </action>
+
+        <action name="editProfile" class="com.estudyplus.controlador.action.ProfileAction" method="execute">
+            <result name="success">/jsp/profile.jsp</result>
+            <result name="input">/jsp/profile.jsp</result>
+            <result name="error">/jsp/profile.jsp</result>
+        </action>
+        
+        <action name="updateProfileAjax" class="com.estudyplus.controlador.action.ProfileAction" method="updateProfileAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="changePasswordAjax" class="com.estudyplus.controlador.action.ProfileAction" method="changePasswordAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="deleteAccountAjax" class="com.estudyplus.controlador.action.ProfileAction" method="deleteAccountAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="logout" class="com.estudyplus.controlador.action.LogoutAction">
+            <result name="success" type="redirectAction">welcome</result>
+        </action>
+
+
+        <action name="friendsAndMessages" class="com.estudyplus.controlador.action.messages.FriendsAndMessagesAction" method="execute">
+            <result name="success">/jsp/friends_and_messages.jsp</result>
+            <result name="error" type="redirectAction">dashboard</result>
+        </action>
+
+        <action name="searchUsersAjax" class="com.estudyplus.controlador.action.messages.SearchUsersAction" method="searchAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="sendFriendRequestAjax" class="com.estudyplus.controlador.action.messages.SendFriendRequestAction" method="execute">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="getFriendsAjax" class="com.estudyplus.controlador.action.messages.FriendshipManagementAction" method="getFriendsAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="getPendingRequestsAjax" class="com.estudyplus.controlador.action.messages.FriendshipManagementAction" method="getPendingRequestsAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="acceptRequestAjax" class="com.estudyplus.controlador.action.messages.FriendshipManagementAction" method="acceptRequestAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="rejectRequestAjax" class="com.estudyplus.controlador.action.messages.FriendshipManagementAction" method="rejectRequestAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+
+        <action name="getConversationsAjax" class="com.estudyplus.controlador.action.messages.MessageManagementAction" method="getConversationsAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="getOrCreateConversationAjax" class="com.estudyplus.controlador.action.messages.MessageManagementAction" method="getOrCreateConversationAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="getMessagesInConversationAjax" class="com.estudyplus.controlador.action.messages.MessageManagementAction" method="getMessagesInConversationAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="sendMessageAjax" class="com.estudyplus.controlador.action.messages.MessageManagementAction" method="sendMessageAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="markMessagesAsReadAjax" class="com.estudyplus.controlador.action.messages.MessageManagementAction" method="markMessagesAsReadAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        
+        
+    </package>
+</struts>

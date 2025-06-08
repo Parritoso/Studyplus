@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="tasks" namespace="/" extends="struts-default">
+        <action name="manageDeliverables" class="com.estudyplus.controlador.action.ManageDeliverablesAction" method="execute">
+            <result name="success">/jsp/manageDeliverables.jsp</result>
+            <result name="error">/jsp/manageDeliverables.jsp</result>
+            <result name="login">/jsp/inicio/login.jsp</result>
+        </action>
+        
+        <action name="showCreateDelivery" class="com.estudyplus.controlador.action.CreateDeliveryAction">
+            <result name="input">jsp/createDelivery.jsp</result>
+        </action>
+
+        <action name="createDelivery" class="com.estudyplus.controlador.action.CreateDeliveryAction" method="execute">
+            <result name="success" type="redirectAction">
+                <param name="actionName">deliverySuccess</param>
+                <param name="namespace">/</param>
+                <param name="createdDeliveryId">${createdDeliveryId}</param> <param name="titulo">${titulo}</param> <param name="descripcion">${descripcion}</param>
+                <param name="fechaLimiteStr">${fechaLimiteStr}</param>
+                <param name="asignatura">${asignatura}</param>
+                <param name="prioridad">${prioridad}</param>
+                <param name="feedbackMessage">${feedbackMessage}</param>
+            </result>
+            <result name="input">/jsp/createDelivery.jsp</result>
+            <result name="error">/jsp/createDelivery.jsp</result>
+        </action>
+        
+        <action name="deliverySuccess" class="com.estudyplus.controlador.action.CreateDeliveryAction" method="showSuccessPage">
+            <result name="success">/jsp/delivery_success.jsp</result>
+            <result name="error" type="redirectAction">dashboard</result>
+        </action>
+        
+        <action name="showCreateExam" class="com.estudyplus.controlador.action.CreateExamAction" method="execute">
+            <result name="input">/jsp/createExam.jsp</result>
+        </action>
+
+        <action name="createExam" class="com.estudyplus.controlador.action.CreateExamAction" method="execute">
+            <result name="success" type="redirectAction">
+                <param name="actionName">examSuccess</param>
+                <param name="namespace">/</param>
+                <param name="createdExamId">${createdExamId}</param>
+                <param name="nombre">${nombre}</param>
+                <param name="descripcion">${descripcion}</param>
+                <param name="fechaExamenStr">${fechaExamenStr}</param>
+                <param name="asignatura">${asignatura}</param>
+                <param name="tipoExamen">${tipoExamen}</param>
+                <param name="prioridad">${prioridad}</param>
+                <param name="recordatorioActivo">${recordatorioActivo}</param>
+                <param name="fechaRecordatorioStr">${fechaRecordatorioStr}</param>
+                <param name="feedbackMessage">${feedbackMessage}</param>
+            </result>
+            <result name="input">/jsp/createExam.jsp</result>
+            <result name="error">/jsp/createExam.jsp</result>
+        </action>
+
+        <action name="examSuccess" class="com.estudyplus.controlador.action.CreateExamAction" method="showSuccessPage">
+            <result name="success">/jsp/exam_success.jsp</result>
+            <result name="error" type="redirectAction">dashboard</result>
+        </action>
+
+        </package>
+</struts>

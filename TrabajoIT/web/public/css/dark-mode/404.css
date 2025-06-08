@@ -1,0 +1,158 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 10:01:06
+    Author     : Pablo.E
+*/
+
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #12171e; /* Gris azulado muy oscuro */
+    color: #e0e0e0; /* Gris claro */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.error-container {
+    text-align: center;
+    padding: 50px 20px;
+    margin-top: 50px;
+}
+.error-container h1 {
+    font-size: 3em;
+    color: #ff6b6b; /* Rojo coral suave */
+    margin-bottom: 20px;
+}
+.error-container p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+}
+.error-container a {
+    color: #4da3ff; /* Azul brillante pero no chillón */
+    text-decoration: none;
+    font-weight: bold;
+}
+.error-container a:hover {
+    text-decoration: underline;
+}
+
+.quote-section {
+    text-align: center;
+    margin: 30px auto;
+    padding: 20px;
+    max-width: 600px;
+    background-color: #1e252e; /* Azul grisáceo oscuro */
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+.quote-section p {
+    font-style: italic;
+    font-size: 1.1em;
+    margin-bottom: 10px;
+}
+.quote-section .author {
+    display: block;
+    text-align: right;
+    font-weight: bold;
+    color: #aaa; /* Gris claro */
+}
+
+.game-container {
+    background-color: #1e252e;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    text-align: center;
+    margin: 20px auto;
+    max-width: 450px;
+}
+.game-container h2,
+.game-container h3 {
+    color: #66b2ff; /* Azul suave */
+    margin-bottom: 15px;
+}
+.game-instructions {
+    font-size: 0.9em;
+    color: #bbb;
+    margin-bottom: 15px;
+}
+canvas {
+    border: 1px solid #444;
+    background-color: #2a2f36; /* Gris oscuro azulado */
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+.game-start-btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+.game-start-btn:hover {
+    background-color: #218838;
+}
+
+.answer-btn {
+    display: block;
+    width: 90%;
+    margin: 8px auto;
+    padding: 10px;
+    background-color: #3a7bd5; /* Azul intenso */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+.answer-btn:hover:not(:disabled) {
+    background-color: #2e5cad;
+}
+.answer-btn.correct {
+    background-color: #28a745;
+}
+.answer-btn.incorrect {
+    background-color: #e74c3c;
+}
+.answer-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+#nextQuestionBtn,
+#restartQuizBtn {
+    background-color: #17a2b8;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 15px;
+}
+#nextQuestionBtn:hover,
+#restartQuizBtn:hover {
+    background-color: #138496;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;
+    background-color: #1b1f24;
+    color: #ccc;
+}
+

@@ -1,0 +1,27 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 11:46:52
+    Author     : Parri
+*/
+
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+.navbar { background-color: #333; color: white; padding: 10px 0; text-align: center; }
+.navbar a { color: white; text-decoration: none; padding: 0 15px; }
+.navbar a:hover { text-decoration: underline; }
+.container { max-width: 450px; margin: auto; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 50px; }
+h2 { text-align: center; color: #333; margin-bottom: 25px; }
+.form-group { margin-bottom: 15px; }
+label { display: block; margin-bottom: 5px; font-weight: bold; color: #555; }
+.form-control { width: calc(100% - 12px); padding: 10px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+.btn { background-color: #28a745; color: white; padding: 12px 20px; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; width: 100%; }
+.btn:hover { background-color: #218838; }
+.links-auth { text-align: center; margin-top: 15px; }
+.links-auth a { color: #007bff; text-decoration: none; }
+.links-auth a:hover { text-decoration: underline; }
+.error-message { color: red; font-size: 0.9em; margin-top: 5px; }
+.feedback-message { color: green; font-weight: bold; text-align: center; margin-bottom: 20px; }
+footer { text-align: center; padding: 20px; margin-top: 30px; background-color: #333; color: white; }

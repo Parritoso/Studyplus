@@ -1,0 +1,161 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 11:51:22
+    Author     : Parri
+*/
+
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+.navbar { background-color: #333; color: white; padding: 10px 0; text-align: center; }
+.navbar a { color: white; text-decoration: none; padding: 0 15px; }
+.navbar a:hover { text-decoration: underline; }
+.main-container {
+    display: flex;
+    height: calc(100vh - 70px); /* Altura de la ventana menos la barra de navegación y el footer */
+    margin-top: 10px;
+}
+.left-panel {
+    flex: 1; /* Ocupa 1/3 del espacio */
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow-y: auto; /* Para scroll si el contenido es largo */
+}
+.right-panel {
+    flex: 2; /* Ocupa 2/3 del espacio */
+    background-color: #fff;
+    margin: 10px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.section-title {
+    color: #007bff;
+    margin-top: 0;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.form-group { margin-bottom: 15px; }
+.form-control { width: calc(100% - 12px); padding: 8px; border: 1px solid #ddd; border-radius: 4px; box-sizing: border-box; }
+.btn { background-color: #28a745; color: white; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer; font-size: 0.9em; }
+.btn:hover { background-color: #218838; }
+.btn-small { padding: 5px 10px; font-size: 0.8em; }
+.message-box {
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+.message-success { background-color: #d4edda; color: #155724; border: 1px solid #c3e6cb; }
+.message-error { background-color: #f8d7da; color: #721c24; border: 1px solid #f5c6cb; }
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.list-item:hover { background-color: #f0f0f0; }
+.list-item:last-child { border-bottom: none; }
+.list-item-name { font-weight: bold; }
+.list-item-actions { display: flex; gap: 5px; }
+
+/* Chat Specific Styles */
+.chat-header {
+    background-color: #007bff;
+    color: white;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: -20px -20px 20px -20px; /* Ajusta para que ocupe todo el ancho del panel */
+    width: -webkit-fill-available
+}
+.messages-display {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #fafafa;
+}
+.message {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    border-radius: 15px;
+    max-width: 70%;
+    word-wrap: break-word;
+}
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+    margin-left: auto;
+    text-align: right;
+}
+.message.received {
+    background-color: #e0e0e0;
+    align-self: flex-start;
+    margin-right: auto;
+    text-align: left;
+}
+.message-sender { font-weight: bold; font-size: 0.85em; color: #555; margin-bottom: 3px; }
+.message-content { font-size: 0.95em; }
+.message-time { font-size: 0.75em; color: #888; margin-top: 3px; }
+.message-input-area {
+    display: flex;
+    gap: 10px;
+}
+.message-input { flex-grow: 1; }
+footer { text-align: center; padding: 20px; margin-top: 30px; background-color: #333; color: white; }
+
+/* Nuevo CSS para notificaciones de mensajes */
+.unread-count {
+    background-color: #dc3545; /* Rojo para mensajes no leídos */
+    color: white;
+    border-radius: 50%;
+    padding: 3px 8px;
+    font-size: 0.7em;
+    font-weight: bold;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+/* Animación de luz pulsante */
+@keyframes pulse-fast {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+@keyframes pulse-medium {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 15px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+@keyframes pulse-slow {
+    0% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7); }
+    70% { box-shadow: 0 0 0 20px rgba(220, 53, 69, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(220, 53, 69, 0); }
+}
+
+.pulse-fast { animation: pulse-fast 0.8s infinite; } /* Para muchos mensajes */
+.pulse-medium { animation: pulse-medium 1.2s infinite; } /* Para pocos mensajes */
+.pulse-slow { animation: pulse-slow 1.6s infinite; } /* Para muy pocos mensajes */
+
+.list-item.has-unread {
+    border: 1px solid #dc3545; /* Borde para resaltar */
+}

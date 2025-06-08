@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <package name="public" namespace="/" extends="struts-default">
+
+        <action name="welcome" class="com.estudyplus.controlador.action.WelcomeAction">
+            <result name="success">/jsp/inicio/welcome.jsp</result>
+        </action>
+
+        <action name="features" class="com.estudyplus.controlador.action.FeaturesAction">
+            <result name="success">/jsp/inicio/features.jsp</result>
+        </action>
+
+        <action name="about" class="com.estudyplus.controlador.action.AboutAction">
+            <result name="success">/jsp/inicio/about.jsp</result>
+        </action>
+
+        <action name="contact" class="com.estudyplus.controlador.action.ContactAction">
+            <result name="success">/jsp/inicio/contact.jsp</result>
+        </action>
+
+        <action name="login" class="com.estudyplus.controlador.action.LoginAction">
+            <result name="success" type="redirectAction">dashboard</result>
+            <result name="input">/jsp/inicio/login.jsp</result>
+            <result name="error">/jsp/inicio/login.jsp</result>
+        </action>
+        
+        <action name="register" class="com.estudyplus.controlador.action.RegisterAction">
+            <result name="success">/jsp/inicio/register.jsp</result>
+            <result name="input">/jsp/inicio/register.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+
+    </package>
+</struts>

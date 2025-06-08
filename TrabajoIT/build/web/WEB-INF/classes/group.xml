@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>
+    <package name="grupo" extends="struts-default, json-default">
+        <action name="viewGroup" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="viewGroup">
+            <result name="success">/jsp/viewGroup.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/viewGroup.jsp</result> 
+        </action>
+
+        <action name="sendGroupMessageAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="sendGroupMessageAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="getNewGroupMessagesAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="getNewGroupMessagesAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="updateGlobalNotesAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="updateGlobalNotesAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="updateGlobalChecklistAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="updateGlobalChecklistAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="preparePlanGroupSessionModalAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="preparePlanGroupSessionModalAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="planGroupStudySession" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="planGroupSession">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="getGlobalChecklistAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction" method="getGlobalChecklistAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="searchUsersGroupAjax" class="com.estudyplus.controlador.action.messages.SearchUsersAction" method="searchGroupAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="sendGroupInvitationAjax" class="com.estudyplus.controlador.action.GrupoEstudioAction"  method="sendGroupInvitationAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+    </package>
+</struts>

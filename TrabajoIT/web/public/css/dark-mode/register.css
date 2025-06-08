@@ -1,0 +1,132 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 10:04:38
+    Author     : Pablo.E
+*/
+
+/*register*/
+body {
+    font-family: Arial, sans-serif;
+    background-color: #12171e;
+    color: #e0e0e0;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+.navbar {
+    background-color: #1b1f24;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+.navbar a {
+    color: #b0cfff;
+    text-decoration: none;
+    padding: 0 15px;
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
+.container {
+    max-width: 400px;
+    margin: auto;
+    padding: 30px;
+    background-color: #1e252e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+    margin-top: 50px;
+}
+h2 {
+    text-align: center;
+    color: #aad4ff;
+    margin-bottom: 25px;
+}
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #bbb;
+}
+.form-control {
+    background-color: #2a2f36;
+    color: #e0e0e0;
+    border: 1px solid #444;
+    padding: 10px;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+.btn {
+    background-color: #28a745;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+.btn:hover {
+    background-color: #218838;
+}
+.links-auth {
+    text-align: center;
+    margin-top: 15px;
+}
+.links-auth a {
+    color: #aad4ff;
+    text-decoration: none;
+}
+.links-auth a:hover {
+    text-decoration: underline;
+}
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.feedback-message {
+    color: #28a745;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.action-error-list {
+    color: #ff6b6b;
+    list-style-type: none;
+    padding: 0;
+    margin-bottom: 15px;
+}
+.action-error-list li {
+    margin-bottom: 5px;
+}
+.password-input-group {
+    position: relative;
+    width: 100%;
+}
+.password-input-group .form-control {
+    padding-right: 40px;
+}
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #999;
+    font-size: 0.9em;
+    user-select: none;
+}
+.toggle-password:hover {
+    color: #aad4ff;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #1b1f24;
+    color: #ccc;
+}

@@ -1,0 +1,155 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 11:51:54
+    Author     : Parri
+*/
+
+body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; color: #333; }
+.navbar { background-color: #333; color: white; padding: 10px 0; text-align: center; }
+.navbar a { color: white; text-decoration: none; padding: 0 15px; }
+.navbar a:hover { text-decoration: underline; }
+.container { max-width: 960px; margin: auto; padding: 30px; background-color: #fff; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); margin-top: 30px; display: flex; flex-wrap: wrap; justify-content: space-between; }
+h2 { text-align: center; color: #333; margin-bottom: 25px; width: 100%; }
+.section-title { color: #007bff; border-bottom: 2px solid #eee; padding-bottom: 10px; margin-bottom: 20px; text-align: left; }
+.btn-group { text-align: center; margin-bottom: 30px; width: 100%; }
+.btn-group .btn {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+.btn-group .btn:hover { background-color: #218838; }
+
+/* Estilos para las secciones de eventos */
+.upcoming-events, .calendar-section {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 20px;
+    flex: 1; /* Ocupa espacio equitativamente */
+    min-width: 45%; /* Ancho mínimo para que se coloquen en dos columnas */
+    margin-right: 15px; /* Espacio entre columnas */
+}
+.calendar-section {
+    margin-right: 0; /* No hay margen a la derecha para el último item */
+    min-width: 50%; /* El calendario puede ser un poco más ancho */
+}
+
+@media (max-width: 768px) {
+    .upcoming-events, .calendar-section {
+        flex: 100%; /* Una sola columna en pantallas pequeñas */
+        margin-right: 0;
+    }
+}
+
+.event-list { list-style: none; padding: 0; }
+.event-list li {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Permite que el contenido se ajuste */
+}
+.event-list li strong { color: #0056b3; }
+.event-list li span.date { font-size: 0.9em; color: #777; }
+.event-list li .actions { margin-left: auto; display: flex; gap: 5px;}
+.event-empty { text-align: center; color: #777; padding: 15px; }
+
+/* Estilos básicos para el calendario */
+.calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    max-width: 100%;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+}
+.calendar-header {
+    grid-column: 1 / -1;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: #333;
+}
+.day-name {
+    font-weight: bold;
+    text-align: center;
+    padding: 8px 0;
+    background-color: #f0f0f0;
+    border-bottom: 1px solid #ccc;
+}
+.day-cell {
+    min-height: 70px; /* Aumenta altura para eventos */
+    border: 1px solid #eee;
+    padding: 5px;
+    text-align: left;
+    position: relative;
+    font-size: 0.9em;
+    background-color: #fafafa;
+    cursor: default;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.day-cell.current-month {
+    background-color: #fff;
+}
+.day-cell.today {
+    border: 2px solid #007bff;
+    background-color: #e6f3ff;
+}
+.day-number {
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #555;
+    margin-bottom: 5px;
+}
+.event-marker {
+    background-color: #ffc107; /* Color para entregas */
+    color: #333;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    margin-top: 3px;
+    display: block;
+    width: calc(100% - 10px); /* Ajusta al ancho de la celda */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box; /* Incluir padding en el ancho */
+}
+.exam-marker {
+    background-color: #dc3545; /* Color diferente para exámenes */
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+    font-size: 0.7em;
+    margin-top: 3px;
+    display: block;
+    width: calc(100% - 10px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    box-sizing: border-box;
+}
+footer { text-align: center; padding: 20px; margin-top: 30px; background-color: #333; color: white; width: 100%; }

@@ -1,0 +1,91 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 10:23:51
+    Author     : Pablo.E
+*/
+
+/*delivery_success*/
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #12171e;
+    color: #e0e0e0;
+}
+.navbar {
+    background-color: #1b1f24;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+.navbar a:hover {
+    text-decoration: underline;
+}
+.container {
+    max-width: 800px;
+    margin: auto;
+    padding: 40px 20px;
+    background-color: #1e252e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-top: 50px;
+}
+h2 {
+    color: #28a745;
+    margin-bottom: 20px;
+}
+p {
+    margin-bottom: 15px;
+}
+.details-box {
+    background-color: #2c333b;
+    border: 1px solid #444;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    text-align: left;
+}
+.details-box p {
+    margin: 5px 0;
+}
+.details-box strong {
+    display: inline-block;
+    width: 120px;
+}
+.countdown {
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #007bff;
+    margin-top: 20px;
+}
+.btn-dashboard {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    display: inline-block;
+}
+.btn-dashboard:hover {
+    background-color: #0056b3;
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    background-color: #1b1f24;
+    color: white;
+}

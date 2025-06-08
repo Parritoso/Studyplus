@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+        "http://struts.apache.org/dtds/struts-2.0.dtd">
+        
+<struts>   
+    <package name="session" namespace="/" extends="struts-default, json-default">
+        <action name="manageStudySessions" class="com.estudyplus.controlador.action.SesionEstudioAction" method="execute">
+            <result name="success">/jsp/manageStudySessions.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/manageStudySessions.jsp</result>
+        </action>
+
+        <action name="showCreateStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="showCreateForm">
+            <result name="success">/jsp/createEditStudySession.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/createEditStudySession.jsp</result>
+        </action>
+
+        <action name="createStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="create">
+            <result name="success" type="redirectAction">manageStudySessions</result>
+            <result name="input">/jsp/createEditStudySession.jsp</result>
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/createEditStudySession.jsp</result>
+            <result name="startActiveSession" type="redirectAction">
+                <param name="actionName">startStudySession</param>
+                <param name="sesionId">${sesionId}</param>
+            </result>
+        </action>
+
+        <action name="showEditStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="showEditForm">
+            <result name="success">/jsp/createEditStudySession.jsp</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result> 
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/createEditStudySession.jsp</result>
+        </action>
+
+        <action name="updateStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="update">
+            <result name="success" type="redirectAction">manageStudySessions</result>
+            <result name="input">/jsp/createEditStudySession.jsp</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+
+        <action name="deleteStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="delete">
+            <result name="success" type="redirectAction">manageStudySessions</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result>
+            <result name="login" type="redirectAction">login</result>
+        </action>
+        
+        <action name="startStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="startSession">
+            <result name="success">/jsp/activeStudySession.jsp</result>
+            <result name="activeSessionPage">/jsp/activeStudySession.jsp</result> 
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result>
+            <result name="invalidState" type="redirectAction">manageStudySessions</result>
+        </action>
+        <action name="pauseStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="pauseSession">
+            <result name="success" type="redirectAction">manageStudySessions</result> 
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result>
+            <result name="invalidState" type="redirectAction">manageStudySessions</result>
+        </action>
+        <action name="resumeStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="resumeSession">
+            <result name="success" type="redirectAction">startStudySession</result> 
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result>
+            <result name="invalidState" type="redirectAction">manageStudySessions</result>
+        </action>
+        <action name="endStudySession" class="com.estudyplus.controlador.action.SesionEstudioAction" method="endSession">
+            <result name="success" type="redirectAction">manageStudySessions</result>
+            <result name="input">/jsp/sessions/activeStudySession.jsp</result> 
+            <result name="login" type="redirectAction">login</result>
+            <result name="error">/jsp/error.jsp</result>
+            <result name="notfound" type="redirectAction">manageStudySessions</result>
+            <result name="invalidState" type="redirectAction">manageStudySessions</result>
+        </action>
+        
+        <action name="updateNotesAjax" class="com.estudyplus.controlador.action.SesionEstudioAction" method="updateNotesAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="updateChecklistAjax" class="com.estudyplus.controlador.action.SesionEstudioAction" method="updateChecklistAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+        <action name="getSessionDataAjax" class="com.estudyplus.controlador.action.SesionEstudioAction" method="getSessionDataAjax">
+            <result type="json">
+                <param name="root">jsonResponse</param>
+            </result>
+        </action>
+    </package>
+</struts>

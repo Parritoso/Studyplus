@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="libraries1">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/jjwt-api-0.11.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/jjwt-jackson-0.11.5.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/jackson-databind-2.9.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/jackson-annotations-2.9.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/jackson-core-2.9.10.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/slf4j-api-1.7.36.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/struts2-json-plugin-2.5.30.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/logback-core-1.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/logback-classic-1.2.11.jar!/" />
+      <root url="jar://$PROJECT_DIR$/src/java/com/estudyplus/libraries/jjwt-impl-0.11.5.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,59 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-jun-2025, 10:29:33
+    Author     : Pablo.E
+*/
+
+body {
+    padding: 20px;
+    background-color: #12171e;
+    color: #e0e0e0;
+}
+.navbar {
+    background-color: #1b1f24; /* Fondo oscuro para la navbar */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+.ranking-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background: #1e252e;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.3);
+}
+
+h2 {
+    color: #e0e0e0;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.table-bronze {
+    background-color: #4e3b31; /* Bronce oscuro */
+}
+
+/* Badge con fondo bronce oscuro y texto blanco */
+.badge.bg-bronze {
+    background-color: #b08d57; /* Bronce oscuro */
+    color: white;
+    padding: 0.4em 0.6em;
+    border-radius: 0.5em;
+    font-weight: bold;
+}
